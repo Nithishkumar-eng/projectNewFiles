@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(70, 70, 211);
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  color: rgb(27, 27, 155);
+}
+
+.toggle{
+    display: flex;
+    flex-direction: row;
+    transition: margin-left .5s;
+    background-color: #ece9e9;
+    padding: 0;
+    align-items: center;
+}
+.icon i{
+    font-size: 25px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-items: center;
+    margin-left: 25%;
+}
+.filter{
+    text-align: end;
+    padding: 6px 2px;
+
+    }
+    .filter select{
+        padding: 6px;
+    }
+    .google-visualization-table-td {
+    text-align: center !important;
+    }
+    h2{
+        text-align: center;
+        color: maroon;
+    }
+    .header h2{
+        color: rgb(25, 25, 241);
+    }
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="./index.html">Home</a>
+  <a href="./studentRecord.html">Students Record</a>
+  <a href="./DriveUpload.html">Upload new drive</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="toggle" id="main">
+     <div class="icon openbtn" onclick="openNav()"><i class="bi bi-list"></i></div>
+     <div class="header"><h2 style="text-align: end;">Placement Management System | Admin Dashboard</h2></div>
+</div>
+<h2>Placement Statistics</h2>
+      <div class="filter">
+          <select class="selector" name="dept" id="dept" onchange="drawChartAndTable02()">
+              <option label="Sort By Department">Sort By Department</option>
+              <option value="MECH">MECH</option>
+              <option value="EEE">EEE</option>
+              <option value="ECE">ECE</option>
+              <option value="CSE">CSE</option>
+              <option value="CIVIL">CIVIL</option>
+          </select>
+          <select class="selector" name="batch" id="batch" onchange="drawChartAndTable01()">
+            <option label="Sort By Batch">Sort By Batch</option>
+            <option value=2022>2022</option>
+            <option value=2023>2023</option>
+          </select>
+      </div>
+      <table class="columns">
+        <tr>
+          <td><div id="table_01" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          <td><div id="chart_01" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          </tr>
+        <tr>
+          <td><div id="table_02" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          <td><div id="chart_02" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+        </tr>
+
+        <tr>
+          <td><div id="table_03" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          <td><div id="chart_03" style="width:800px; height:600px; border: 1px solid #ccc"></div></td>
+        </tr>
+        <tr>
+          <td><div id="table_04" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          <td><div id="chart_04" style="width:800px; height:600px; border: 1px solid #ccc"></div></td>
+        </tr>
+
+        <tr>
+          <td><div id="table_05" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>   
+          <td><div id="chart_05" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+        </tr>
+        <tr>
+          <td><div id="table_06" style="width: 800px; height: 600px; border: 1px solid #ccc"></div></td>
+          <td><div id="chart_06" style="width:800px; height:600px; border: 1px solid #ccc"></div></td>
+        </tr>
+        </table>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="./newContext.js"></script>
+        <script type="text/javascript" src="./charts.js"></script>
+        <script>
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+        
+</body>
+</html> 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload drive</title>
+	<style>
+		body{
+			background-color: rgb(250, 210, 217);
+		}
+		label{
+            font-weight: 600;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        input,textarea,select{
+            width: 100%;
+            border: 0;
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            padding: 8px;
+        }
+		h3{
+			background-color: white;
+			padding: 6px 3px;
+			width: 100%;
+		}
+		button{
+			border: 0;
+			outline: 0;
+			color: white;
+			font-weight: bold;
+			padding: 8px 24px ;
+			margin-right: 5px;
+			border-radius: 3px;
+		}
+		.create-btn{
+			background-color: green;
+		}
+		.reset-btn{
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<h3>Create New Drive</h3>
+	<form action="#">
+	<div class="container">
+			<table align="center" cellpadding="10">
+				<tr>
+					<td><label for="name">Company name</label></td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td><label for="batch">Batch</label></td>
+					<td><input type="text" name="batch"></td>
+				</tr>
+				<tr>
+					<td><label for="criteria">Required CGPA</label></td>
+					<td><select name="cgpa" id="cgpa"><option value="9">Above 9</option><option value="8">Above 8</option><option value="7">Above 7</option><option value="6">Above 6</option><option value="null">Not required</option></select>					</td>
+				</tr>
+				<tr>
+					<td><label for="arrears">Include history of arrears</label></td>
+					<td><select name="arrears" id="arrears"><option value="yes">Yes</option><option value="no">No</option></select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="package">Package</label></td>
+					<td><select name="package" id="package"><option value="6">Above 6 LPA</option><option value="5">5-6 LPA</option><option value="4">4-5 LPA</option><option value="3">3-4 LPA</option><option value="2">Less than 3 LPA</option></select>					</td>
+				</tr>
+				<tr>
+					<td><label for="driveDate">Date of drive</label></td>
+					<td><input type="date" name="driveDate"></td>
+				</tr>
+				<tr>
+					<td><label for="lastDateToApply">Last date of application</label></td>
+					<td><input type="date" name="lastDateToApply"></td>
+				</tr>
+				<tr>
+					<td><label for="Designations">Designations</label></td>
+					<td><input type="text" name="Designations"></td>
+				</tr>
+				<tr>
+					<td><label for="Description">Description</label></td>
+					<td><textarea name="Description" id="Description" cols="30" rows="10"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button class="create-btn" type="submit">Create</button><button class="reset-btn" type="reset">Reset</button></td>
+				</tr>
+			</table>
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+			
+		
+			
+		
+		
+			
+			
+	</div>
+	</form>
+</body>
+</html>
